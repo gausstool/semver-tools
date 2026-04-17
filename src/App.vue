@@ -63,8 +63,8 @@ function resetAll() {
     <h1>语义化版本号工具</h1>
     <p class="subtitle">Semantic Versioning 2.0.0 | RFC 2119</p>
 
-    <div class="header">
-      <div class="input-section">
+    <div class="container-header">
+      <div class="header-section input-section">
         <label class="input-label">当前版本号</label>
         <div>
           <input type="text" class="version-input" :class="{ error: inputError }" v-model="currentVersion"
@@ -72,17 +72,17 @@ function resetAll() {
           <p v-if="inputError" class="error-hint">{{ inputError }}</p>
         </div>
       </div>
-      <div class="setting-section">
+      <div class="header-section setting-section">
         <label class="input-label">设置</label>
         <button class="reset-btn" @click="resetAll">重置</button>
       </div>
-      <div class="result-section">
+      <div class="header-section result-section">
         <div class="result-label">新版本号</div>
         <input class="version-input result" v-model="newVersion" disabled></input>
       </div>
     </div>
 
-    <div class="checklist-wrapper">
+    <div class="container-body">
       <div v-for="group in modelData" :key="group.level" class="checklist-group" :class="group.level">
         <div class="group-header" :class="group.level">
           <span>
@@ -146,10 +146,14 @@ h1 {
   font-size: 14px;
 }
 
-.header {
+.container-header {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.header-section {
+  width: 400px;
 }
 
 .input-label,
@@ -164,7 +168,7 @@ h1 {
 .version-input {
   box-sizing: border-box;
   padding: 14px 0;
-  width: 400px;
+  width: 100%;
   font-size: 24px;
   font-weight: 600;
   text-align: center;
@@ -196,7 +200,7 @@ h1 {
 
 .reset-btn {
   box-sizing: border-box;
-  width: 400px;
+  width: 100%;
   padding: 14px 0;
   border: none;
   border-radius: 8px;
@@ -210,7 +214,7 @@ h1 {
   background-color: #f8f9fa;
 }
 
-.checklist-wrapper {
+.container-body {
   display: flex;
   flex-direction: row;
   padding-top: 20px;
@@ -220,7 +224,6 @@ h1 {
 
 .checklist-group {
   width: 400px;
-  min-width: 400px;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -391,5 +394,17 @@ h1 {
 .rfc-keyword.may {
   background: var(--color-blue-4);
   color: white;
+}
+
+@media screen and (max-width: 1280px) {
+  .container-header,
+  .container-body {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header-section,
+  .checklist-group {
+    width: 100%;
+  }
 }
 </style>
