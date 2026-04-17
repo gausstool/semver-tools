@@ -174,7 +174,7 @@ h1 {
 .error-hint {
   color: #e74c3c;
   font-size: 12px;
-  margin-top: 8px;
+  margin-top: 2px;
   text-align: center;
   position: absolute;
 }
@@ -198,7 +198,7 @@ h1 {
 .checklist-wrapper {
   display: flex;
   flex-direction: row;
-  padding-top: 16px;
+  padding-top: 20px;
   gap: 24px;
   margin-bottom: 32px;
 }
