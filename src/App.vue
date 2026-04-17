@@ -186,7 +186,7 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   color: #181818;
   border: 1px solid #f5f5ff;
 }
