@@ -67,61 +67,36 @@ function resetAll() {
       <div class="input-section">
         <label class="input-label">当前版本号</label>
         <div>
-          <input
-            type="text"
-            class="version-input"
-            :class="{ error: inputError }"
-            v-model="currentVersion"
-            @input="handleInput"
-            placeholder="例如: 1.2.3"
-          />
+          <input type="text" class="version-input" :class="{ error: inputError }" v-model="currentVersion"
+            @input="handleInput" placeholder="例如: 1.2.3" />
           <p v-if="inputError" class="error-hint">{{ inputError }}</p>
         </div>
       </div>
-
-      <div class="result-section">
-        <div class="result-label">新版本号</div>
-        <div class="version-input result">{{ newVersion }}</div>
-      </div>
       <div class="setting-section">
         <label class="input-label">设置</label>
-        <button class="reset-btn" @click="resetAll">重置所有选项</button>
+        <button class="reset-btn" @click="resetAll">重置</button>
+      </div>
+      <div class="result-section">
+        <div class="result-label">新版本号</div>
+        <input class="version-input result" v-model="newVersion" disabled></input>
       </div>
     </div>
 
     <div class="checklist-wrapper">
-      <div
-        v-for="group in modelData"
-        :key="group.level"
-        class="checklist-group"
-        :class="group.level"
-      >
+      <div v-for="group in modelData" :key="group.level" class="checklist-group" :class="group.level">
         <div class="group-header" :class="group.level">
           <span>
             {{ group.title }}
-            <span v-if="group.level === 'major'" class="rfc-keyword must"
-              >MUST</span
-            >
-            <span v-if="group.level === 'minor'" class="rfc-keyword must"
-              >MUST</span
-            >
-            <span v-if="group.level === 'minor'" class="rfc-keyword may"
-              >MAY</span
-            >
-            <span v-if="group.level === 'patch'" class="rfc-keyword must"
-              >MUST</span
-            >
+            <span v-if="group.level === 'major'" class="rfc-keyword must">MUST</span>
+            <span v-if="group.level === 'minor'" class="rfc-keyword must">MUST</span>
+            <span v-if="group.level === 'minor'" class="rfc-keyword may">MAY</span>
+            <span v-if="group.level === 'patch'" class="rfc-keyword must">MUST</span>
           </span>
           <span class="group-tag">{{ group.level }}</span>
         </div>
         <div class="checklist">
-          <div
-            v-for="(item, index) in group.items"
-            :key="index"
-            class="check-item"
-            :class="{ checked: item.checked }"
-            @click="toggleItem(item)"
-          >
+          <div v-for="(item, index) in group.items" :key="index" class="check-item" :class="{ checked: item.checked }"
+            @click="toggleItem(item)">
             <div class="checkbox">
               <span v-if="item.checked" class="check-icon">✓</span>
             </div>
@@ -172,7 +147,8 @@ h1 {
 }
 
 .version-input {
-  padding: 14px 16px;
+  box-sizing: border-box;
+  padding: 14px 0;
   width: 400px;
   font-size: 24px;
   font-weight: 600;
@@ -181,18 +157,15 @@ h1 {
   border-radius: 8px;
   color: #333;
   transition: border-color 0.3s;
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #f0f0f0;
+  color: #181818;
 }
 
 .version-input:focus {
   outline: none;
+  border-color: #181818;
 }
 
-.version-input.result {
-  border-color: #27ae60;
-  color: #27ae60;
-}
 
 .version-input.error {
   border-color: #e74c3c;
@@ -207,13 +180,14 @@ h1 {
 }
 
 .reset-btn {
+  box-sizing: border-box;
   width: 400px;
-  padding: 14px 16px;
+  padding: 14px 0;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 24px;
-  color: #000;
+  color: #181818;
   border: 1px solid #f5f5ff;
 }
 
@@ -231,20 +205,21 @@ h1 {
 
 .checklist-group {
   width: 400px;
+  min-width: 400px;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .checklist-group.major {
-  border: 2px solid #fee;
+  border: 2px solid #fdd;
 }
 
 .checklist-group.minor {
-  border: 2px solid #efe;
+  border: 2px solid #dfd;
 }
 
 .checklist-group.patch {
-  border: 2px solid #eef;
+  border: 2px solid #ddf;
 }
 
 .group-header {
