@@ -115,6 +115,21 @@ function resetAll() {
 .container {
   background: white;
   padding: 20px 20px 0;
+
+  --color-red-0: #fff1f0;
+  --color-red-1: #ffccc7;
+  --color-red-2: #ffa39e;
+  --color-red-4: #ff4d4f;
+
+  --color-green-0: #f6ffed;
+  --color-green-1: #d9f7be;
+  --color-green-2: #b7eb8f;
+  --color-green-4: #73d13d;
+
+  --color-blue-0: #e6f4ff;
+  --color-blue-1: #bae0ff;
+  --color-blue-2: #91caff;
+  --color-blue-4: #4096ff;
 }
 
 h1 {
@@ -211,15 +226,15 @@ h1 {
 }
 
 .checklist-group.major {
-  border: 2px solid #fdd;
+  border: 2px solid var(--color-red-2);
 }
 
 .checklist-group.minor {
-  border: 2px solid #dfd;
+  border: 2px solid var(--color-green-2);
 }
 
 .checklist-group.patch {
-  border: 2px solid #ddf;
+  border: 2px solid var(--color-blue-2);
 }
 
 .group-header {
@@ -232,18 +247,18 @@ h1 {
 }
 
 .group-header.major {
-  background: #fff5f5;
-  color: #c0392b;
+  background: var(--color-red-0);
+  color: var(--color-red-4);
 }
 
 .group-header.minor {
-  background: #f5fff5;
-  color: #27ae60;
+  background: var(--color-green-0);
+  color: var(--color-green-4);
 }
 
 .group-header.patch {
-  background: #f5f5ff;
-  color: #667eea;
+  background: var(--color-blue-0);
+  color: var(--color-blue-4);
 }
 
 .group-tag {
@@ -255,17 +270,17 @@ h1 {
 }
 
 .group-header.major .group-tag {
-  background: #e74c3c;
+  background: var(--color-red-4);
   color: white;
 }
 
 .group-header.minor .group-tag {
-  background: #27ae60;
+  background: var(--color-green-4);
   color: white;
 }
 
 .group-header.patch .group-tag {
-  background: #667eea;
+  background: var(--color-blue-4);
   color: white;
 }
 
@@ -306,15 +321,15 @@ h1 {
 }
 
 .checklist-group.major .check-item .checkbox {
-  border-color: #e74c3c;
+  border-color: var(--color-red-4);
 }
 
 .checklist-group.minor .check-item .checkbox {
-  border-color: #27ae60;
+  border-color: var(--color-green-4);
 }
 
 .checklist-group.patch .check-item .checkbox {
-  border-color: #667eea;
+  border-color: var(--color-blue-4);
 }
 
 .check-item.checked .checkbox {
@@ -323,18 +338,18 @@ h1 {
 }
 
 .checklist-group.major .check-item.checked .checkbox {
-  background: #e74c3c;
-  border-color: #e74c3c;
+  background: var(--color-red-4);
+  border-color: var(--color-red-4);
 }
 
 .checklist-group.minor .check-item.checked .checkbox {
-  background: #27ae60;
-  border-color: #27ae60;
+  background: var(--color-green-4);
+  border-color: var(--color-green-4);
 }
 
 .checklist-group.patch .check-item.checked .checkbox {
-  background: #667eea;
-  border-color: #667eea;
+  background: var(--color-blue-4);
+  border-color: var(--color-blue-4);
 }
 
 .check-icon {
@@ -369,12 +384,12 @@ h1 {
 }
 
 .rfc-keyword.must {
-  background: #e74c3c;
+  background: var(--color-red-4);
   color: white;
 }
 
 .rfc-keyword.may {
-  background: #3498db;
+  background: var(--color-blue-4);
   color: white;
 }
 </style>
