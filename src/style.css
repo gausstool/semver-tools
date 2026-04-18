@@ -5,9 +5,28 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   min-height: 100vh;
   background-color: #fff;
+}
+
+body {
+  --color-red-0: #fff1f0;
+  --color-red-1: #ffccc7;
+  --color-red-2: #ffa39e;
+  --color-red-4: #ff4d4f;
+
+  --color-green-0: #f6ffed;
+  --color-green-1: #d9f7be;
+  --color-green-2: #b7eb8f;
+  --color-green-4: #73d13d;
+
+  --color-blue-0: #e6f4ff;
+  --color-blue-1: #bae0ff;
+  --color-blue-2: #91caff;
+  --color-blue-4: #4096ff;
 }
 
 #app {
