@@ -12,9 +12,6 @@ defineProps<{
 </template>
 
 <style scoped>
-.result-section {
-  width: 400px;
-}
 
 .result-label {
   display: block;

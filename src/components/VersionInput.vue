@@ -32,10 +32,6 @@ function handleInput(event: Event) {
 </template>
 
 <style scoped>
-.input-section {
-  width: 400px;
-}
-
 .input-label {
   display: block;
   font-weight: 600;

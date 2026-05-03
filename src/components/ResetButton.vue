@@ -22,9 +22,6 @@ function handleClick() {
 </template>
 
 <style scoped>
-.setting-section {
-  width: 400px;
-}
 
 .input-label {
   display: block;

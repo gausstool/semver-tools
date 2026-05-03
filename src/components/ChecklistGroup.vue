@@ -48,7 +48,6 @@ function handleItemClick(itemIndex: number) {
 
 <style scoped>
 .checklist-group {
-  width: 400px;
   border-radius: 12px;
   overflow: hidden;
 }
