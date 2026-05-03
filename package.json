@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@gausszhou/ui-vue-components": "1.0.0-beta.3",
-    "@gausszhou/ui-vue-theme-chalk": "1.0.0-beta.2",
+    "@gausszhou/ui-vue-theme-chalk": "1.0.0-beta.3",
     "vue": "^3.4.21"
   },
   "devDependencies": {
